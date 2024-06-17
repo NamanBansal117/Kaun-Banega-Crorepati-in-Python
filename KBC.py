@@ -9,7 +9,7 @@ q = [
 		"Which city is known as 'The City of Lights'",
 		"What is the name of the first indian Bollywood film",
 		"The Statue of Liberty was  gifted to America from what European country",
-		"Where is the largest mountain of the universe located",
+		"Where is the largest mountain of the Solar System located",
 		"Which of the following is the only man-made structure visible from space",
 		"Who is known as the father of cricket"
 ]
@@ -67,10 +67,10 @@ print("1 : 50:50 :  Randomly Eliminates Two Incorrect Options")
 print("2 : Pass : Allows You to Skip the Question")
 
 print('\n')
-# a = input("Press any key to begin")	
-time.sleep(1)
+a = input("Press Enter to begin\n")	
 n = 0
-
+fcount=0
+pcount=0
 while n < len(a):
 	print("\n")
 	print("QUESTION", n + 1)
@@ -83,10 +83,8 @@ while n < len(a):
 		print(on+1,":",str(opt[on]))
 		on=on+1
 	ans = input("Press Keys 1-4 to select an Option\nPress 5 for 50:50\nPress 6 for PASS\n")
-	if str(opt[int(ans) - 1]) == str(a[n]):
-		print("Correct Answer!")
-		n = n + 1
-	elif ans == 5:
+	if int(ans) == 5:
+		fcount=fcount+1
 		print("You Have Chosen Lifeline 50:50 !")
 		print("Two Incorrect Options Will Be Randomly Eliminated")
 		opt = [a[n], b[n]]
@@ -94,7 +92,7 @@ while n < len(a):
 		print("The Remaining Options Are:-")
 		x = 0
 		while x <= 1:
-			print(x + 1, opt[x])
+			print(x + 1,":", opt[x])
 			x=x+1
 		spl_ans = input("Press Keys 1-2 to select an Option")
 		if str(opt[int(spl_ans) - 1]) == str(a[n]):
@@ -102,23 +100,26 @@ while n < len(a):
 			n = n + 1
 		else:
 			print("Wrong Answer!")
-			# BREAK LOOP
-			# n = n + 100
 			break
-	elif ans == 6:
+	elif int(ans) == 6
+		pcount=pcount+1:
 		print("You Have Chosen the Lifeline : PASS!")
-		moveon = input("Press Any Key to Move On to the Next Question")
+		moveon = input("Press Enter to Move On to the Next Question\n")
 		n = n + 1
-	elif int(ans) <= 4:
-		print("Wrong Answer!")
-		# BREAK LOOP
-		# n = n + 100
-		break
+	
+	elif int(ans)<=len(opt):
+		if str(opt[int(ans) - 1]) == str(a[n]):
+			print("Correct Answer!")
+			n = n + 1
+		elif int(ans) <= 4 and int(ans) > 0:
+			print("Wrong Answer!")
+			break
 	else:
 		print("Please Only Press Keys 1-6!")
 
 if n==10:
 	print("You Answered All Ten Questions Correctly!")
-	print("You May Now Leave With Your Jackpot Prize of 7.5 Crore!")
+	print("You May Now Leave With Your Jackpot Prize of 10 Crores!")
 else :
 	print("Sorry, You Have Been Disqualified")
+

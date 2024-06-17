@@ -65,13 +65,15 @@ print('\n')
 print("You Will be Given TWO Lifelines:-")
 print("1 : 50:50 :  Randomly Eliminates Two Incorrect Options")
 print("2 : Pass : Allows You to Skip the Question")
+print("You will be told how many times you used these Lifelines at the end")
 
 print('\n')
-a = input("Press Enter to begin\n")	
+start = input("Press Enter to begin\n")
 n = 0
 fcount=0
 pcount=0
 while n < len(a):
+	time.sleep(1)
 	print("\n")
 	print("QUESTION", n + 1)
 	print(q[n], "?")
@@ -101,12 +103,11 @@ while n < len(a):
 		else:
 			print("Wrong Answer!")
 			break
-	elif int(ans) == 6
-		pcount=pcount+1:
+	elif int(ans) == 6 :
+		pcount=pcount+1
 		print("You Have Chosen the Lifeline : PASS!")
 		moveon = input("Press Enter to Move On to the Next Question\n")
 		n = n + 1
-	
 	elif int(ans)<=len(opt):
 		if str(opt[int(ans) - 1]) == str(a[n]):
 			print("Correct Answer!")
@@ -118,8 +119,12 @@ while n < len(a):
 		print("Please Only Press Keys 1-6!")
 
 if n==10:
-	print("You Answered All Ten Questions Correctly!")
-	print("You May Now Leave With Your Jackpot Prize of 10 Crores!")
+	if pcount>1 or fcount>1 :
+		print("That was the last question!")
+		print("You had to use 50:50", fcount, "times")
+		print("You had to use PASS", pcount, "times")
+	else :
+		print("You answered all questions correctly!")
+		print("You may now leave with your Jackpot Prize of 10 Crores Rupees!")
 else :
 	print("Sorry, You Have Been Disqualified")
-

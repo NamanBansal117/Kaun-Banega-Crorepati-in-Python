@@ -63,9 +63,9 @@ while i >-1 :
 
 print('\n')
 print("You Will be Given TWO Lifelines:-")
-print("1 : 50:50 :  Randomly Eliminates Two Incorrect Options")
+print("1 : 50:50 : Randomly Eliminates Two Incorrect Options")
 print("2 : Pass : Allows You to Skip the Question")
-print("You will be told how many times you used these Lifelines at the end")
+print("You will be told how many times you used these Lifelines at the end.")
 
 print('\n')
 start = input("Press Enter to begin\n")

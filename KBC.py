@@ -73,6 +73,22 @@ n = 0
 fcount=0
 pcount=0
 while n < len(a):
+	if n==3 :
+		print("First Checkpoint Reached!\nNext Checkpoint at Q6")
+	elif n==6:
+		print("Second Checkpoint Reached!\nNext Checkpoint at Q9")
+	elif n==9:
+		print("Last Checkpoint Reached!\nYou can now leave with your prize of 2 crore or move on to the Jackpot Question.\nAnswer correctly to win 10 crore\nAnswer wrongly and you go back home with nothing")
+		time.sleep(1)
+		jchoice=input(" 1 to move on to the Jackpot\n 2 to leave with just two crore")
+	elif n==10:
+		print("JACKPOT QUESTION")
+	elif n>6:
+		print("Last Checkpoint : Q6")
+	elif n>3:
+		print("Last Checkpoint : Q3")
+	else :
+		print("First Checkpoint at Q3")
 	time.sleep(1)
 	print("\n")
 	print("QUESTION", n + 1)
@@ -84,7 +100,7 @@ while n < len(a):
 	while on<=3 :
 		print(on+1,":",str(opt[on]))
 		on=on+1
-	ans = input("Press Keys 1-4 to select an Option\nPress 5 for 50:50\nPress 6 for PASS\n")
+	ans = input("\nPress Keys 1-4 to select an Option\nPress 5 for 50:50\nPress 6 for PASS\n")
 	if int(ans) == 5:
 		fcount=fcount+1
 		print("You Have Chosen Lifeline 50:50 !")
@@ -118,6 +134,7 @@ while n < len(a):
 	else:
 		print("Please Only Press Keys 1-6!")
 
+time.sleep(1)
 if n==10:
 	if pcount>1 or fcount>1 :
 		print("That was the last question!")
@@ -125,6 +142,12 @@ if n==10:
 		print("You had to use PASS", pcount, "times")
 	else :
 		print("You answered all questions correctly!")
-		print("You may now leave with your Jackpot Prize of 10 Crores Rupees!")
+		print("You may now leave with your Jackpot Prize of 10 Crores !")
+elif n>=9:
+	print("By losing the Jackpot, you have lost all of your winnings.\nYou may now leave with NOTHING")
+elif n>=6:
+	print("The last checkpoint was at Q6\nYou may now leave with a grand total of 5 lakh rupees")
+elif n>=3:
+	print("The last checkpoint was at Q9\nYou may now leave with a grand total of 1 lakh rupees")
 else :
 	print("Sorry, You Have Been Disqualified")
